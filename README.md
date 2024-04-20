@@ -1,9 +1,9 @@
-1. 알고리즘 문제 
+# 1. 알고리즘 문제 
 
 ## 과제: ant.py
 python re 를 사용하여 앞의 수의 패턴을 파악, 이후 dynamic progmramming 으로 나열
 
-2. API 만들기
+# 2. API 만들기
 
 ## 프로젝트: mysite/
 
