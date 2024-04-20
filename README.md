@@ -4,38 +4,13 @@ python re 를 사용하여 앞의 수의 패턴을 파악, 이후 dynamic progmr
 
 2. API 만들기
 
-request:
-
-response:
-
-
-## Endpoints
-
-The base for the api is `/api/v1/`
-Once we have other versions, the v1 wil be replaced by v2 and so on.
-We will remove the versions from the api at some point, which should be communicated to any partners onboarding.
-
-The endoints are namespaced by the user type. partners have their own space under `/api/v1/partners/`.
-This is the only area the partner api keys should be able to access.
-
-So far there is only one endpoint for partners, which is `/api/v1/partners/listings/`.
-
-We support GET, POST, PUT and PATCH.
-
-DELETE is disallowed but will be amended once we have the soft delete feature. It currently gives a 405.
-
-
-
-
-## migrations 폴더에 자료를 insert 하는 파일 작성
-
-당신의 프로젝트 README에 다음 내용을 추가하여 CRUD 및 검색 API에 대한 사용 방법을 설명할 수 있습니다.
+#### migrations 폴더에 자료를 insert 하는 파일 작성
+./migrations/0007_insert_data.py
 
 ---
-
 # 음식 API 사용 방법
-
-이 프로젝트는 음식 데이터에 대한 CRUD(Create, Read, Update, Delete) API 및 검색 기능을 제공합니다. 아래에서는 각 API의 사용 방법과 요청/응답 인자에 대해 설명합니다.
+이 프로젝트는 음식 데이터에 대한 CRUD API 및 검색 기능을 제공합니다. 
+아래에서는 각 API의 사용 방법과 요청/응답 인자에 대해 설명합니다.
 
 ## CRUD API 사용 방법
 
@@ -47,7 +22,7 @@ DELETE is disallowed but will be amended once we have the soft delete feature. I
   - `food_id`: 음식 ID (필수)
   - `food_cd`: 음식 코드
   - `group_name`: 음식 그룹 이름
-  - `food_name`: 음식 이름 (필수)
+  - `food_name`: 음식 이름
   - `research_year`: 연구 연도
   - `market_name`: 시장 이름
   - `ref_name`: 참고 이름
@@ -106,8 +81,5 @@ DELETE is disallowed but will be amended once we have the soft delete feature. I
 
 ---
 
-이제 이 README를 프로젝트의 루트 디렉터리에 `README.md` 파일로 추가하고, 프로젝트의 사용자들이 API를 쉽게 이해하고 사용할 수 있도록 합니다.
-
 참고자료
-
 https://www.django-rest-framework.org/
