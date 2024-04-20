@@ -1,0 +1,39 @@
+version: '3.7'
+
+services:
+
+  app:
+   build: ./mysite
+   command: sh -c "python ./mysite/manage.py makemigrations && python ./mysite/manage.py migrate --noinput && python ./mysite/manage.py runserver 0.0.0.0:8000"
+   environment:
+     DB_HOST: pgsql
+     DB_USER: postgres
+     DB_PASSWORD: root
+     DB_NAME: sagak
+   ports:
+     - "8000:8000"
+   volumes:
+      - .:/app/
+   depends_on:
+      pgsql:
+        condition: service_healthy
+
+  pgsql:
+    image: postgres:14-alpine
+    environment:
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: sagak
+    expose:
+      - "5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U postgres" ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+
+
+volumes:
+  pg_data:
