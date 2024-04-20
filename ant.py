@@ -1,4 +1,4 @@
-#dp
+import unittest
 import re
 def look_and_say_sequence(n):
     dp = {}
@@ -12,8 +12,13 @@ def look_and_say_sequence(n):
         matches = re.findall(pattern, dp[i-1])
         dp[i] = ''.join(map(lambda x: str(len(x[0])) + x[1], matches))
 
-    return dp[i][len(dp[i])//2-1:len(dp[i])//2+1]
+    return int(dp[i][len(dp[i])//2-1:len(dp[i])//2+1])
 
-print(look_and_say_sequence(5))
-print(look_and_say_sequence(8))
 
+class MyTest(unittest.TestCase):
+    def test(self):
+        self.assertEqual(look_and_say_sequence(5), 12)
+        self.assertEqual(look_and_say_sequence(8), 21)
+
+if __name__ == '__main__':
+    unittest.main()
