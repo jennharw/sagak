@@ -25,6 +25,6 @@ class FoodSearchViewSet(viewsets.ReadOnlyModelViewSet):
         if maker_name:
             queryset = queryset.filter(maker_name__icontains=maker_name)
         if food_code:
-            queryset = queryset.filter(food_code=food_code)
+            queryset = queryset.filter(food_cd=food_code)
 
         return queryset
