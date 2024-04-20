@@ -1,11 +1,19 @@
 1. 알고리즘 문제 
 
+## 과제: ant.py
 python re 를 사용하여 앞의 수의 패턴을 파악, 이후 dynamic progmramming 으로 나열
 
 2. API 만들기
 
-#### migrations 폴더에 자료를 insert 하는 파일 작성
+## 프로젝트: mysite/
+
+### docker compose 로 배포
+Django Dockerfile과 postgres image 배포
+
+### migrations 폴더에 자료를 insert 하는 파일 작성
 ./migrations/0007_insert_data.py
+
+### crud api 및 search api 작성
 
 ---
 # 음식 API 사용 방법
@@ -16,7 +24,7 @@ python re 를 사용하여 앞의 수의 패턴을 파악, 이후 dynamic progmr
 
 ### 음식 객체 생성 (Create)
 
-- **엔드포인트:** `/api/foods/`
+- **엔드포인트:** `/api/food/`
 - **메서드:** POST
 - **요청 인자 (Request Payload):**
   - `food_id`: 음식 ID (필수)
@@ -31,13 +39,13 @@ python re 를 사용하여 앞의 수의 패턴을 파악, 이후 dynamic progmr
 
 ### 음식 객체 조회 (Read)
 
-- **엔드포인트:** `/api/foods/{food_id}/`
+- **엔드포인트:** `/api/food/{food_id}/`
 - **메서드:** GET
 - **응답:** 해당 food_id에 해당하는 Food 객체의 정보
 
 ### 음식 객체 업데이트 (Update)
 
-- **엔드포인트:** `/api/foods/{food_id}/`
+- **엔드포인트:** `/api/food/{food_id}/`
 - **메서드:** PUT
 - **요청 인자 (Request Payload):**
   - 업데이트할 필드들 (예: food_name, research_year, 등)
@@ -45,7 +53,7 @@ python re 를 사용하여 앞의 수의 패턴을 파악, 이후 dynamic progmr
 
 ### 음식 객체 삭제 (Delete)
 
-- **엔드포인트:** `/api/foods/{food_id}/`
+- **엔드포인트:** `/api/food/{food_id}/`
 - **메서드:** DELETE
 - **응답:** 삭제된 Food 객체의 ID 및 성공 여부 메시지
 
